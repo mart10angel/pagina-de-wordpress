@@ -1,0 +1,123 @@
+:root {
+    --body-bg-value: 33, 33, 33;
+    --body-bg: rgb(var(--body-bg-value));
+    --btn-color: #f9fbe7;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+  
+  html {
+    box-sizing: border-box;
+  }
+  
+  body {
+    min-height: 100vh;
+    background: var(--body-bg);
+  }
+  
+  .section-gallery {
+    display: flex;
+    justify-content: center;
+    
+    min-height: 450px;
+    padding-top: 90px;
+    padding-bottom: 180px;
+    transform-style: preserve-3d;
+    rotate: x -8deg;
+  }
+  
+  .gallery-list {
+    width: 200px;
+    height: 180px;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: perspective(2000px) rotateY(0deg);
+    transition: 0.5s;
+  }
+  
+  .gallery-item {
+    list-style: none;
+    position: absolute;
+    inset: 0;
+    transform-style: preserve-3d;
+    transform: rotateY(calc(var(--i) * 45deg)) translateZ(280px);
+    -webkit-box-reflect: below 0
+      linear-gradient(to bottom, transparent 50%, rgb(var(--body-bg-value), 0.3));
+  }
+  
+  .card {
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgb(var(--body-bg-value), 0.5);
+    overflow: hidden;
+  }
+  
+  .card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    vertical-align: top;
+    user-select: none;
+  }
+
+  
+  .section-controller {
+    padding: 10px 5%;
+    text-align: center;
+  }
+  
+  .btn {
+    width: 40px;
+    aspect-ratio: 1 / 1;
+    padding: 0;
+    border: 1px solid var(--btn-color);
+    border-radius: 50%;
+    background: transparent;
+    color: var(--btn-color);
+    font-size: 20px;
+    transition: 0.3s;
+    cursor: pointer;
+    box-shadow: 0 0 0;
+  }
+  
+  .btn:hover {
+    background: var(--btn-color);
+    color: var(--body-bg);
+  }
+  
+  .btn:active {
+    box-shadow: 0 0 10px var(--btn-color);
+  }
+  
+  .btn-prev {
+    rotate: 180deg;
+    margin-right: 40px;
+  }
+  
+  .section-alert {
+    padding: 20px 10%;
+    color: #ef5350;
+    line-height: 1.5;
+    letter-spacing: 0.1em;
+    font-size: 1em;
+  }
+  
+  .alert-link {
+    color: #42a5f5;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  .alert-link:hover {
+    color: #90caf9;
+  }
+  
+  .alert-code {
+    color: var(--btn-color);
+  }
+  
